@@ -1,5 +1,5 @@
-import * as THREE from '../../libs/three137/three.module.js';
-import { GLTFLoader } from '../../libs/three137/GLTFLoader.js';
+import * as THREE from '/libs/three137/three.module.js';
+import { GLTFLoader } from '/libs/three137/GLTFLoader.js';
 import { DRACOLoader } from '../../libs/three137/DRACOLoader.js';
 import { RGBELoader } from '../../libs/three137/RGBELoader.js';
 import { OrbitControls } from '../../libs/three137/OrbitControls.js';
