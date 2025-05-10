@@ -13,7 +13,7 @@ class Game {
         this.clock = new THREE.Clock();
         this.loadingBar = new LoadingBar(); // Show it by default
 
-        this.assetsPath = '../../assets/';
+        this.assetsPath = './assets/';
         this.scene = new THREE.Scene();
 
         this.camera = new THREE.PerspectiveCamera(110, window.innerWidth / window.innerHeight, 0.1, 50);
@@ -94,7 +94,7 @@ this.controls.panSpeed = 0.6;               // Pan speed
     loadNPC() {
         const loader = new GLTFLoader().setPath(`${this.assetsPath}factory/`);
         const dracoLoader = new DRACOLoader();
-        dracoLoader.setDecoderPath('../../libs/three137/draco/');
+        dracoLoader.setDecoderPath('./libs/three137/draco/');
         loader.setDRACOLoader(dracoLoader);
     
         const models = ['threeto2.glb', 'guy3.glb'];
@@ -183,7 +183,7 @@ this.controls.panSpeed = 0.6;               // Pan speed
     createSkySphere() {
         const skyGeometry = new THREE.SphereGeometry(10, 100, 100);
         const skyMaterial = new THREE.MeshBasicMaterial({
-            map: new THREE.TextureLoader().load('../../assets/sky/sky3.png'),
+            map: new THREE.TextureLoader().load('./assets/sky/sky3.png'),
             side: THREE.BackSide,
         });
         const skySphere = new THREE.Mesh(skyGeometry, skyMaterial);
@@ -252,7 +252,7 @@ this.orderObject.scale.set(1, 1, 1);
         try {
             const loader = new GLTFLoader();
             const gltf = await new Promise((resolve, reject) =>
-                loader.load('../../assets/factory/text.glb', resolve, undefined, reject)
+                loader.load('./assets/factory/text.glb', resolve, undefined, reject)
             );
 
             this.clickableObject = gltf.scene;
@@ -269,7 +269,7 @@ this.orderObject.scale.set(1, 1, 1);
                 const intersects = raycaster.intersectObject(this.clickableObject, true);
 
                 if (intersects.length > 0) {
-                    window.location.href = 'https://github.com/rmutairi/space';
+                    window.location.href = 'www.amazon.sa';
                 }
             };
 
@@ -292,7 +292,7 @@ this.orderObject.scale.set(1, 1, 1);
     
             // Load the GLB model once
             const gltf = await new Promise((resolve, reject) =>
-                loader.load('../../assets/factory/text.glb', resolve, undefined, reject)
+                loader.load('./assets/factory/text.glb', resolve, undefined, reject)
             );
     
             // Original clickable object
@@ -318,7 +318,7 @@ this.orderObject.scale.set(1, 1, 1);
                 const intersects = raycaster.intersectObject(this.clickableObject, true);
     
                 if (intersects.length > 0) {
-                    window.location.href = 'https://github.com/rmutairi/space';
+                    window.location.href = 'www.saudibrand.com';
                 }
             };
     
