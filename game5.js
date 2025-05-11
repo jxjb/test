@@ -97,7 +97,7 @@ this.controls.panSpeed = 0.6;               // Pan speed
         dracoLoader.setDecoderPath('./libs/three137/draco/');
         loader.setDRACOLoader(dracoLoader);
     
-        const models = ['gate.glb', 'portal.glb' , 'portal.glb' , 'gate.glb'];
+        const models = ['threeto2.glb', 'guy3.glb' ,'portal.glb' ,'gate.glb'];
         this.npcObjects = []; // Store clickable NPCs
         this.outlined = new Set(); // Store toggled outlines
         this.outlineColor = 0x00ff00; // green
@@ -269,7 +269,7 @@ this.orderObject.scale.set(1, 1, 1);
                 const intersects = raycaster.intersectObject(this.clickableObject, true);
 
                 if (intersects.length > 0) {
-                    window.location.href = 'www.amazon.sa';
+                    window.location.href = 'https://github.com/rmutairi/space';
                 }
             };
 
@@ -318,7 +318,7 @@ this.orderObject.scale.set(1, 1, 1);
                 const intersects = raycaster.intersectObject(this.clickableObject, true);
     
                 if (intersects.length > 0) {
-                    window.location.href = 'www.saudibrand.com';
+                    window.location.href = 'https://github.com/rmutairi/space';
                 }
             };
     
