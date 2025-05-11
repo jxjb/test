@@ -97,7 +97,7 @@ this.controls.panSpeed = 0.6;               // Pan speed
         dracoLoader.setDecoderPath('./libs/three137/draco/');
         loader.setDRACOLoader(dracoLoader);
     
-        const models = ['threeto2.glb', 'portal.glb' , 'portal.glb' , 'gate.glb'];
+        const models = ['gate.glb', 'portal.glb' , 'portal.glb' , 'gate.glb'];
         this.npcObjects = []; // Store clickable NPCs
         this.outlined = new Set(); // Store toggled outlines
         this.outlineColor = 0x00ff00; // green
