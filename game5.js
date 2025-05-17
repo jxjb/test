@@ -130,6 +130,55 @@ this.controls.panSpeed = 0.6;               // Pan speed
                     this.npcObjects.push(gltf.scene);
                     this.scene.add(gltf.scene);
                     modelsLoaded++;
+
+
+
+
+
+                    if (modelsLoaded === models.length) {
+                        this.loadingBar.visible = false;
+                    
+                        // 👇 Setup audio after loading is complete
+                        const audio = document.getElementById('bgAudio');
+                        const soundIcon = document.getElementById('soundIcon');
+                        let isMuted = true;
+                    
+                        // Only play audio once after user interacts
+                        const enableAudio = () => {
+                            audio.play().catch(err => {
+                                console.warn('Autoplay failed:', err);
+                            });
+                            window.removeEventListener('click', enableAudio);
+                            window.removeEventListener('touchstart', enableAudio);
+                        };
+                    
+                        window.addEventListener('click', enableAudio);
+                        window.addEventListener('touchstart', enableAudio);
+                    
+                        // Toggle mute with the icon
+                        function toggleSound() {
+                            isMuted = !isMuted;
+                            audio.muted = isMuted;
+                            soundIcon.textContent = isMuted ? '🔇' : '🔊';
+                        }
+                    
+                        soundIcon.addEventListener('click', toggleSound);
+                        soundIcon.addEventListener('touchstart', (e) => {
+                            e.preventDefault();
+                            toggleSound();
+                        });
+                    }
+
+
+
+
+
+
+
+
+
+
+                    
     
                     if (modelsLoaded === models.length) {
                         this.loadingBar.visible = false;
@@ -252,7 +301,7 @@ this.orderObject.scale.set(1, 1, 1);
         try {
             const loader = new GLTFLoader();
             const gltf = await new Promise((resolve, reject) =>
-                loader.load('./assets/factory/text.glb', resolve, undefined, reject)
+                loader.load('./assets/factory/text2.glb', resolve, undefined, reject)
             );
 
             this.clickableObject = gltf.scene;
@@ -269,7 +318,7 @@ this.orderObject.scale.set(1, 1, 1);
                 const intersects = raycaster.intersectObject(this.clickableObject, true);
 
                 if (intersects.length > 0) {
-                    window.location.href = 'https://github.com/rmutairi/space';
+                    window.location.href = 'https://saudishirts.com/';
                 }
             };
 
@@ -292,7 +341,7 @@ this.orderObject.scale.set(1, 1, 1);
     
             // Load the GLB model once
             const gltf = await new Promise((resolve, reject) =>
-                loader.load('./assets/factory/text.glb', resolve, undefined, reject)
+                loader.load('./assets/factory/text2.glb', resolve, undefined, reject)
             );
     
             // Original clickable object
@@ -302,7 +351,7 @@ this.orderObject.scale.set(1, 1, 1);
     
             // Duplicate and position the second object
             this.rotatingText = gltf.scene.clone(true);
-            this.rotatingText.position.y += 1;
+            this.rotatingText.position.y += 2;
             this.rotatingText.visible = false; // Hide initially
             this.scene.add(this.rotatingText);
     
@@ -318,7 +367,7 @@ this.orderObject.scale.set(1, 1, 1);
                 const intersects = raycaster.intersectObject(this.clickableObject, true);
     
                 if (intersects.length > 0) {
-                    window.location.href = 'https://github.com/rmutairi/space';
+                    window.location.href = 'https://saudishirts.com/';
                 }
             };
     
